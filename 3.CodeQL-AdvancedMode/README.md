@@ -38,13 +38,14 @@ These exercises are designed for users who are already familiar with CodeQL fund
 3. Open the `.github/workflows/codeql.yml` file in your forked repository.
 4. Use the exercises and ideas below to experiment with advanced CodeQL features.
 
-![Fork](image-2.png)
+![image](https://github.com/user-attachments/assets/661c687d-0f66-4ba4-89d3-dee10e890fb7)
 
-![Advanced](image-3.png)
+![image](https://github.com/user-attachments/assets/757749cf-c16b-4ece-ad50-4f716250de9c)
+
 
 ---
 
-## Advanced CodeQL Workflow Features to Try (for This Codebase)
+## Advanced CodeQL Workflow Features to Try Later
 
 The following examples are tailored for the languages present in this codebase:
 - **GitHub Actions**
