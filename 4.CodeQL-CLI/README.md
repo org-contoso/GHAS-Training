@@ -1,4 +1,4 @@
-# 3.CodeQL-CLI
+# 4.CodeQL-CLI
 
 This folder contains hands-on exercises and documentation for using the CodeQL CLI.
 
@@ -26,36 +26,58 @@ This folder contains hands-on exercises and documentation for using the CodeQL C
 
    ![CodeQL CLI Download Assets](../assets/codeql-cli-download-assets.png)
 
-2. **Add CodeQL to your PATH**
+### Exercise Steps
 
-   - Extract the CodeQL bundle to a directory, for example: `C:\Users\kganguly\code\GHAS\codeql`
-   - Add `C:\Users\kganguly\code\GHAS\codeql` to your system `PATH` environment variable.
-   - This allows you to run CodeQL processes by simply using the `codeql` command in your terminal, regardless of your current directory.
+1. **Clone the Repository**
+   ```pwsh
+   git clone https://github.com/org-contoso/webapp-ts
+   cd webapp-ts
+   ```
+2. **Set Up the CodeQL Database**
 
-3. **Set Up the CodeQL Database**
+    CodeQL databases are created by running the following command from the checkout root of your project:
+
+    | Note: As part of this exercise, you must replace *database* and *language-identifier* by yourself. Choose any name for your database and choose the appropriate identifier for javascript.
+
    ```pwsh
-   codeql database create my-database --language=<LANGUAGE> --source-root=./<source-folder>
+   codeql database create <database> --language=<language-identifier>
    ```
-   Replace `<LANGUAGE>` with the language of your codebase (e.g., `javascript`, `python`, `java`).
-   Replace `<source-folder>` with the path to your source code.
-4. **Run CodeQL Analysis**
+
+   You must specify:
+
+<database>: a path to the new database to be created. This directory will be created when you execute the command—you cannot specify an existing directory.
+
+--language: the identifier for the language to create a database for. When used with --db-cluster, the option accepts a comma-separated list, or can be specified more than once. CodeQL supports creating databases for the following languages:
+
+![alt text](image.png)
+
+Note:
+* If you specify one of the alternative identifiers, this is equivalent to using the standard language identifier. For example, specifying javascript instead of javascript-typescript will not exclude analysis of TypeScript code.
+* If you want to add custom build commands, then you can do so by adding the `--command <build>` or use the `--build-mode: manual` in `advanced-codeql.yml`. This is recommended for Java, C/C++ or C#. For JS/TS, Python, Go By default, autobuild detection is used, which is what we 
+
+3. **Run CodeQL Analysis**
    ```pwsh
-   codeql database analyze my-database <path-to-qlpack> --format=sarifv2.1.0 --output=results.sarif
+   codeql database analyze my-database <optional-path-to-packs,queries> --format=sarif-latest --output=results.sarif
    ```
-   Replace `<path-to-qlpack>` with the path to the CodeQL queries you want to run (e.g., `codeql-repo/qlpacks/javascript-code-scanning.qls`).
-5. **Review Results**
-   Open the `results.sarif` file in a compatible viewer or upload it to GitHub for visualization.
-6. **Clean Up (Optional)**
+
+
+   Replace `<optional-path-to-packs,queries>` with the path to the CodeQL packs or queries you want to run (e.g., `codeql-repo/qlpacks/javascript-code-scanning.qls`). This is optional. To run the standard queries used for code scanning, omit this parameter. To see the other query suites included in the CodeQL CLI bundle, run `codeql resolve queries`. For this exercise, you can remove this parameter.
+
+   Review the [full list of parameters](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries#running-codeql-database-analyze) available with `codeql database analyze`.
+
+
+4. **Review Results**
+   Open the `results.sarif` file in a compatible viewer or upload it to GitHub for visualization. For example, install the Sarif viewer extension on VS Code to view it in the VS Code editor.
+
+   If you have enabled the `default setup` for CodeQL in the repo on github.com, compare the number of issues on the Repo's security overview and the Sarif viewer to see if you get the same number of issues using the default query suites.
+
+5. **Clean Up (Optional)**
    ```pwsh
    Remove-Item -Recurse -Force my-database
    Remove-Item results.sarif
    ```
 
-### Tips for Trainers
-- Ensure all participants have the prerequisites installed before the session.
-- Walk through each step and explain the purpose of each command.
-- Encourage participants to experiment with different queries and codebases.
 
 ### References
-- [CodeQL CLI Documentation](https://docs.github.com/en/code-security/code-scanning/using-codeql-cli/about-the-codeql-cli)
+- [CodeQL CLI Documentation](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/about-the-codeql-cli)
 - [CodeQL Query Help](https://codeql.github.com/docs/)
