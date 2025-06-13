@@ -61,9 +61,20 @@ Note:
    ```
 
 
-   Replace `<optional-path-to-packs,queries>` with the path to the CodeQL packs or queries you want to run (e.g., `codeql-repo/qlpacks/javascript-code-scanning.qls`). This is optional. To run the standard queries used for code scanning, omit this parameter. To see the other query suites included in the CodeQL CLI bundle, run `codeql resolve queries`. For this exercise, you can remove this parameter.
+      Replace `<optional-path-to-packs,queries>` with the path to the CodeQL packs or queries you want to run (e.g., `codeql-repo/qlpacks/javascript-code-scanning.qls`). This is optional. To run the standard queries used for code scanning, omit this parameter. To see the other query suites included in the CodeQL CLI bundle, run `codeql resolve queries`. For this exercise, you can remove this parameter.
 
-   Review the [full list of parameters](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries#running-codeql-database-analyze) available with `codeql database analyze`.
+      Review the [full list of parameters](https://docs.github.com/en/code-security/codeql-cli/getting-started-with-the-codeql-cli/analyzing-your-code-with-codeql-queries#running-codeql-database-analyze) available with `codeql database analyze`.
+
+      Note: The standard CodeQL packs for all supported languages are published in the [Container registry](https://github.com/orgs/codeql/packages). If you installed the CodeQL CLI in the standard way, using the CodeQL CLI bundle, the core query packs are already downloaded and available to you. They are:
+
+      * codeql/cpp-queries
+      * codeql/csharp-queries
+      * codeql/go-queries
+      * codeql/java-queries
+      * codeql/javascript-queries
+      * codeql/python-queries
+      * codeql/ruby-queries
+      * codeql/swift-queries
 
 
 4. **Review Results**
