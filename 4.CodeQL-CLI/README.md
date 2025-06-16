@@ -1,6 +1,13 @@
 # 4.CodeQL-CLI
 
-This folder contains hands-on exercises and documentation for using the CodeQL CLI.
+This section provides information and instructions related to the CodeQL Command Line Interface (CLI) lab. It is intended to guide users through the process of using CodeQL CLI for code analysis as part of the GHAS-Training course.
+## Table of Contents
+
+- [CodeQL CLI Hands-on Exercise Guidelines](#codeql-cli-hands-on-exercise-guidelines)
+   - [Prerequisites](#prerequisites)
+   - [Download & Install Guide](#download--install-guide)
+   - [Exercise Steps](#exercise-steps)
+   - [References](#references)
 
 ## CodeQL CLI Hands-on Exercise Guidelines
 

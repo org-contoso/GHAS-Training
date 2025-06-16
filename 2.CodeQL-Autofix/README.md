@@ -1,6 +1,11 @@
 # 2.CodeQL-Autofix
 
-This folder contains exercises and resources related to CodeQL Autofix features.
+## Table of Contents
+
+- [Apply Autofix on PRs](#apply-autofix-on-prs)
+- [Apply Autofix on Security Alerts](#apply-autofix-on-security-alerts)
+
+This lab is related to CodeQL Autofix features.
 
 ---
 
