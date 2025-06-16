@@ -9,7 +9,7 @@ This lab is related to CodeQL Autofix features.
 
 ---
 
-## Apply Autofix on PRs
+## Activity 1 - Apply Autofix on PRs
 
 1. **Go to the latest PR that you created in the previous lab**
    - Note the **Edit** button next to it which you can use to edit a manual fix directly on the vulnerable file. We will not use this, instead we will go with Copilot's suggested fix.
@@ -23,9 +23,9 @@ This lab is related to CodeQL Autofix features.
 
 - Confirm Merge Request and Let Copilot Apply the fix on the default (main) branch
 
-## Apply Autofix on Security Alerts
+## Activity 2 - Apply Autofix on Security Alerts
 
-First we need to introduce the vulnerability again for fixing this. We will also test the **Dismis Alert** functionality.
+First we need to introduce the vulnerability again.
 
    - Go to Server > routes.py
    - Edit line 16 by highlighting the SQL statement and replace it with this text: `"SELECT * FROM books WHERE name LIKE '%" + name + "%'"`.
