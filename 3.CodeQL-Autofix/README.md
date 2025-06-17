@@ -1,4 +1,4 @@
-# 2.CodeQL-Autofix
+# CodeQL-Autofix
 
 ## Table of Contents
 
