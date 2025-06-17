@@ -1,4 +1,4 @@
-# Lab 4 - Creating a Security Campaign on GitHub
+# Creating a Security Campaign on GitHub
 
 This lab explains how to create and manage a Security Campaign in your GitHub organization.
 

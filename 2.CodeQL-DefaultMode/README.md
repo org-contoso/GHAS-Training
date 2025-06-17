@@ -1,4 +1,4 @@
-# 1.CodeQL-Intro
+# CodeQL-Intro
 
 This course will guide you through the basics of CodeQL, including setting up your environment, running your first queries, and understanding CodeQL analysis results.
 
